@@ -47,7 +47,7 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      await fetch("/.netlify/functions/get")
+      await fetch(`/.netlify/functions/get`)
         .then(res => res.json())
         .then(data => {
             setStudents(data)            
@@ -262,7 +262,8 @@ export default function Home() {
          
             {!students ? (
               <div >
-                <CircularProgress color="secondary" />
+                {/* <CircularProgress color="secondary" /> */}
+                <p> loading ..</p>
               </div>
             ) : (
               students.map(std => (

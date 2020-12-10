@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
     const client = new faunadb.Client({
       secret: process.env.FAUNADB_ADMIN_SECRET,
     })
-console.log("progress")
+
     let result = await client.query(
       q.Map(
         q.Paginate(q.Match(q.Index("student_list"))),
